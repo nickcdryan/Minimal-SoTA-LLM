@@ -35,7 +35,7 @@ AN EXAMPLE TRAINING LOOP:
 - torch.compile()
 - automatic mixed precision (AMP) autocast
 - disable torch debuggers for performance
-- gradient accumulation
+- ~~gradient accumulation~~
 - many tips from the [pytorch guide](https://pytorch.org/tutorials/recipes/recipes/tuning_guide.html)
 
 
