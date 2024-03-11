@@ -50,7 +50,7 @@ TODO:
 
 This project is not built for optimal speed, inference, or parallelism. It is best to use it as a reference benchmark while training, or as a base upon which to experiment with new architecture modifications. The "state of the art" (or whatever that means to you) changes all the time, so quickly implementing and testing changes should be easy and fast.
 
-If you want something faster and with more off-the-shelf transformer building blocks, [X-Transformers](https://github.com/lucidrains/x-transformers), and [xformers](https://github.com/facebookresearch/xformers) are good options. You'll have to invest some time in order to modify / understand them compared to this project, which you should be able to understand in a few minutes and modify with minimal effort.
+If you want something faster and more performant with a bunch of off-the-shelf transformer building blocks, [X-Transformers](https://github.com/lucidrains/x-transformers), and [xformers](https://github.com/facebookresearch/xformers) are good options. You'll have to invest some time in order to modify / understand them when compared to this project, which is intended to be understood and hackable with minimal effort.
 
 
 
