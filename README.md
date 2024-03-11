@@ -13,8 +13,8 @@ ARCHITECTURE:
 - ROPE with interpolation / extrapolation (via [rotary_embedding_torch](https://github.com/lucidrains/rotary-embedding-torch))
 - Flash Attention (via F.scaled_dot_product_attention)
 - SwiGLU
-- Pre-layer norm ff
-- Parallel pre-layer norm ff
+- Parallel layers (PALM)
+- Pre-layer norms
 - Group query attention
 
 MODEL CONFIG:
