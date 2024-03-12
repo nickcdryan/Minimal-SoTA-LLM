@@ -9,7 +9,7 @@ This project provides an extremely minimal, legible, and easy-to-modify "state o
 I created this in order to have a quick baseline against which to test architecture and research ideas. This model approximates the "best practices" according to a survey of LLMs over the last few years. Special thanks to [Stella Biderman](https://twitter.com/BlancheMinerva/status/1740365334467756267) for aggregating and sharing all of these details.
 
 ## Features
-I grabbed the [Mistral 7B](https://github.com/mistralai/mistral-src) model, cleaned it up a bit, and added the following:
+I grabbed the [Mistral 7B](https://github.com/mistralai/mistral-src) model, cleaned it up a bit, and added components where necessary. 
 
 **ARCHITECTURE:**
 - RMS Norm
