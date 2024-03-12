@@ -1,6 +1,8 @@
 # Minimal-SoTA-LLM
 Compact, legible, "state of the art" baseline decoder language model 
 
+[Link to Colab Notebook](https://colab.research.google.com/drive/1l6ydblW754hXqhjcHiL8I17G_84OSaoE?usp=sharing)
+
 ## Description
 This project provides an extremely minimal, legible, and easy-to-modify "state of the art" (March, 2024) decoder language model.
 
@@ -45,6 +47,7 @@ I grabbed the [Mistral 7B](https://github.com/mistralai/mistral-src) model, clea
 - pre-norm and/or post-norm?
 - warmup regimen?
 - user requests
+- optimizer.step warning when using gradscaler [seems harmless](https://discuss.pytorch.org/t/userwarning-detected-call-of-lr-scheduler-step-before-optimizer-step-in-pytorch-1-1-0-and-later-you-should-call-them-in-the-opposite-order-optimizer-step-before-lr-scheduler-step/88295/7)
 
 
 ## What this project doesn't do:
