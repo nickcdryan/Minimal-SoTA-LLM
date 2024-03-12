@@ -43,7 +43,6 @@ I grabbed the [Mistral 7B](https://github.com/mistralai/mistral-src) model, clea
 **TODO/QUESTIONS:**
 - T5 packing? (pack multiple training examples to fit in one context window)
 - pre-norm and/or post-norm?
-- glu approximate or exact?
 - warmup regimen?
 - user requests
 
