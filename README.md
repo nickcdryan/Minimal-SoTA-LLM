@@ -6,6 +6,8 @@ Compact, legible, "state of the art" baseline decoder language model
 ## Description
 This project provides an extremely minimal, legible, and easy-to-modify "state of the art" (March, 2024) decoder language model.
 
+(I will periodically update the model to keep it fresh.)
+
 I created this in order to have a quick baseline against which to test architecture and research ideas. This model approximates the "best practices" according to a survey of LLMs over the last few years. Special thanks to [Stella Biderman](https://twitter.com/BlancheMinerva/status/1740365334467756267) for aggregating and sharing all of these details.
 
 ## Features
