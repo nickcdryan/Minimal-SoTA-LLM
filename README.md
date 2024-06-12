@@ -18,7 +18,7 @@ I grabbed the [Mistral 7B](https://github.com/mistralai/mistral-src) model, clea
 - ROPE with interpolation / extrapolation (via [rotary_embedding_torch](https://github.com/lucidrains/rotary-embedding-torch))
 - Flash Attention (via F.scaled_dot_product_attention)
 - SwiGLU
-- Parallel layers (PALM)
+- ~~Parallel layers (PALM)~~ removed: latest architectures favor normal "two hop residual"
 - Pre-layer norms
 - Group-query / Multi-query attention
 
@@ -58,6 +58,51 @@ This project is not built for speed, inference, or parallelism. It is best to us
 NB: obviously this "state of the art" configuration is not guaranteed to work best for your dataset, your setup, your scale, etc. and there's valid disagreement about the value of each little change. However this should approximate a very good baseline for you. 
 
 If you want something more performant and with a bunch of off-the-shelf transformer building blocks, [X-Transformers](https://github.com/lucidrains/x-transformers), and [xformers](https://github.com/facebookresearch/xformers) are good options. You'll have to invest some time in order to modify / understand them when compared to this project, which is intended to be understood and hackable with minimal effort.
+
+## Copy wandb benchmark runs:
+Once you've got a good benchmark run, you want to copy it out to multiple projects. For some reason you can't do this in wandb easily, so here's a script.
+Not totally relevant to this project, but I use it all the time.
+
+```python
+!pip install wandb
+import wandb
+wandb.login()
+api = wandb.Api()
+
+src_entity = "johnsmith"
+src_project = "project-1"
+src_name = "benchmark-run-1"
+
+dst_entity = "johnsmith"
+dst_project = "project-2"
+
+runs = api.runs(f"{src_entity}/{src_project}")
+
+for run in runs:
+    if run.name == src_name:
+        # Get the run history and files
+        history = run.history()
+        files = run.files()
+
+        # Create a new run in the destination project
+        new_run = wandb.init(project=dst_project, entity=dst_entity, config=run.config, name=run.name,resume="allow")
+
+        # Log the history to the new run
+        for index, row in history.iterrows():
+
+            # Include project step_size. Can also enter this manually
+            step_size = history['_step'].values[1]
+
+            new_run.log(row.to_dict(), step= index * step_size)
+
+        # Upload the files to the new run
+        for file in files:
+            file.download(replace=True)
+            new_run.save(file.name,policy = "now")
+
+        # Finish the new run
+        new_run.finish()
+```
 
 
 
