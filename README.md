@@ -4,7 +4,7 @@ Compact, legible, "state of the art" baseline decoder language model
 [Link to Colab Notebook](https://colab.research.google.com/drive/1l6ydblW754hXqhjcHiL8I17G_84OSaoE?usp=sharing)
 
 ## Description
-This notebook provides an extremely minimal, legible, and easy-to-modify "state of the art" (March, 2024) decoder language model.
+This notebook provides an extremely minimal, legible, and easy-to-modify "state of the art" (February, 2025) decoder language model.
 
 (I will periodically update the model to keep it fresh.)
 
@@ -20,7 +20,9 @@ I grabbed the [Mistral 7B](https://github.com/mistralai/mistral-src) model, clea
 - SwiGLU
 - ~~Parallel layers (PALM)~~ removed: latest architectures favor normal "two hop residual"
 - Pre-layer norms
-- Group-query / Multi-query attention
+- GQA / MQA
+- KV caching
+- MLA with compressed KV caching (DeepSeek V3)
 
 **MODEL CONFIG:**
 - no bias
